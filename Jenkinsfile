@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/jflores233/sample-php.git'
+        git branch: 'main', url: 'https://github.com/jflores233/sample-php.git'
       }
     }
     stage('Build image') {
