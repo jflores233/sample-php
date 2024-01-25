@@ -33,7 +33,7 @@ pipeline {
     stage('Deploying to K3S') {
       steps {
         script {
-          kubernetesDeploy(configs: "php-sample.yaml")
+          kubernetesDeploy(kubeconfigId: 'k3s-10.9', configs: "php-sample.yaml")
         }
       }
     }
