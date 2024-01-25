@@ -31,17 +31,9 @@ pipeline {
     }
 	
     stage('Deploying to K3S') {
-	  environment {
-          registryCredential = 'dockerhub-credentials'
-      }
       steps {
         script {
-          kubernetesDeploy(kubeconfigId: 'k3s-token', configs: "php-sample.yaml",
-		  dockerCredentials: [
-                        [credentialsId: registryCredential]
-                 ]		  
-		  )
-        }
+          kubernetesDeploy(kubeconfigId: 'k3s-token', configs: "php-sample.yaml"}
       }
     }
   }
