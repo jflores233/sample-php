@@ -30,10 +30,22 @@ pipeline {
       }
     }
 	
+	stage('Deploy to Kubernetes') {
+      steps {
+      container(name: 'kubectl', shell: '/bin/sh') {
+        withCredentials([file(credentialsId: 'k3s-token', variable: 'KUBECONFIG')]) {
+          sh "echo $KUBECONFIG > /var/jenkins_home/.kube/config"
+          sh "kubectl apply -f manifest.yaml"
+          }
+        }
+      }
+    }
+	
     stage('Deploying to K3S') {
       steps {
         script {
-          kubernetesDeploy(configs: "php-sample.yaml")
+          kubernetesDeploy(configs: "php-sample.yaml", 
+                                         "service.yaml")
         }
       }
     }
