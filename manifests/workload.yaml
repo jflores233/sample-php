@@ -61,7 +61,7 @@ spec:
             - ALL
           privileged: false
           readOnlyRootFilesystem: true
-          runAsNonRoot: true
+          runAsNonRoot: false
         resources:
           requests:
             memory: "64Mi"
