@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <H1><font color="white">Sample PHP application</font></H1>
+         <H1><font color="white">Sample PHP application v3</font></H1>
         <title>My First PHP Page</title>
     </head>
     <body>

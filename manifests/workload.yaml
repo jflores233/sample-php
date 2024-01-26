@@ -15,7 +15,7 @@ spec:
         app: sample-php
     spec:
       containers:
-      - image: lightbulb233/php7.4.33-apache:v2
+      - image: lightbulb233/php7.4.33-apache:v3
         name: php-sample
         imagePullPolicy: Always
         ports:
