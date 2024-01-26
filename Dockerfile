@@ -8,6 +8,6 @@ RUN apt-get update && \
     apt-get clean
 
 # The PHP application code goes in sample-php/
-#COPY sample-php /var/www/html/
+COPY sample-php /var/www/html/
 
-EXPOSE 8743
+EXPOSE 80
