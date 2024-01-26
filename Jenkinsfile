@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    dockerimagename = "lightbulb233/php7.4.33-apache:v3"
+    dockerimagename = "lightbulb233/php7.4.33-apache"
     dockerImage = ""
   }
   agent any
