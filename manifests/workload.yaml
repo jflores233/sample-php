@@ -5,7 +5,7 @@ metadata:
   labels:
     app.kubernetes.io/name: sample-php
     app: kubeapp
-    env: speeltuin
+    env: local
   name: sample-php-deploy
 spec:
   replicas: 1
