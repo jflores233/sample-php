@@ -10,6 +10,19 @@ pipeline {
         git branch: 'main', url: 'https://github.com/jflores233/sample-php.git'
       }
     }
+	
+	stages {
+		stage('SonarQube Analysis') { 
+			steps {
+				script {
+					withSonarQubeEnv('Sonarqube') {
+						sh "${tool('sonar-scanner')}/bin/sonar-scanner -Dsonar.projectKey=myProjectKey -Dsonar.projectName=myProjectName"
+					}
+				}
+			}
+		}
+	}
+			
     stage('Build image') {
       steps{
         script {
