@@ -11,13 +11,12 @@ pipeline {
       }
     }
 	
-	stages {
-		stage('SonarQube Analysis') { 
-			steps {
-				script {
-					withSonarQubeEnv('Sonarqube') {
-						sh "${tool('sonar-scanner')}/bin/sonar-scanner -Dsonar.projectKey=myProjectKey -Dsonar.projectName=myProjectName"
-					}
+
+	stage('SonarQube Analysis') { 
+		steps {
+			script {
+				withSonarQubeEnv('Sonarqube') {
+					sh "${tool('sonar-scanner')}/bin/sonar-scanner -Dsonar.projectKey=myProjectKey -Dsonar.projectName=myProjectName"
 				}
 			}
 		}
