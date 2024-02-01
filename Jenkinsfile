@@ -15,7 +15,7 @@ pipeline {
 	stage('SonarQube Analysis') { 
 		steps {
 			script {
-				withSonarQubeEnv('Sonarqube') {
+				withSonarQubeEnv('sonar-scanner') {
 					sh "${tool('sonar-scanner')}/bin/sonar-scanner -Dsonar.projectKey=myProjectKey -Dsonar.projectName=myProjectName"
 				}
 			}
